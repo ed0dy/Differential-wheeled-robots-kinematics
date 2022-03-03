@@ -93,9 +93,12 @@ class Model(object):
 
         if rotation_speed == 0 :
             # TODO
+            dy = 0
+            dx = dp
+            dtheta = 0
+        else :
             dx = (linear_speed / rotation_speed) * math.sin(rotation_speed)
             dy = (linear_speed / rotation_speed) * (1 - math.cos(rotation_speed))
-        else :
 
         # Updating the robot position
         self.x = self.x + 0  # TODO
