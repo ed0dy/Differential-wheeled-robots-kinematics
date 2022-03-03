@@ -67,8 +67,12 @@ class Model(object):
             float -- linear speed (m/s), rotational speed (rad/s)
         """
         # TODO
-        linear_speed = 0
-        rotation_speed = 0
+        m1_speed = self.m1.speed
+        m2_speed = self.m2.speed
+
+
+        linear_speed = (m1_speed + m2_speed) / 2 # On fait la moyenne des vitesses des deux roues pour avoir la vitesse linéaire du robot
+        rotation_speed = (m1_speed - linear_speed)
         return linear_speed, rotation_speed
 
     def update(self, dt):
